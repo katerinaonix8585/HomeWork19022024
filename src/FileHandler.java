@@ -55,12 +55,12 @@ public class FileHandler {
         if (file.length() < 1024){
             return String.format("%d B", file.length());
         } else if (file.length() < 1024 * 1024) {
-            return String.format("%d KB", file.length());
+            return String.format("%d KB", file.length() / 1024);
         } else if (file.length() < 1024 * 1024 *1024) {
-            return String.format("%d MB", file.length());
+            return String.format("%d MB", file.length()/1024/1024);
         } else if (file.length() < 1024 * 1024 * 1024 * 1024) {
-            return String.format("%d GB", file.length());
-        } else {return String.format("%.2f TB", file.length());}
+            return String.format("%d GB", file.length()/1024/1024/1024);
+        } else {return String.format("%.2f TB", file.length()/1024/1024/1024/1024);}
 
     }
 
